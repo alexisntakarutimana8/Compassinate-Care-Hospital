@@ -1,235 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Compassionate Care Hospital</title>
-    <style>
-        body {
-        transition: background-color 0.3s, color 0.3s;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        scroll-behavior: smooth;
-    }
-    .dark-mode {
-        background-color: #333;
-        color: #fff;
-    }
-    #theme-toggle {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-             }
-    header {
-        padding: 10px;
-        background: #f8f9fa;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ddd;   
-        }
-    .logo img {
-        max-width: 100%;
-        height: auto;
-    }
 
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 20px;
-    }
-    nav a {
-        text-decoration: none;
-        color: #007bff;
-    }
-    #modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        justify-content: center;
-        align-items: center;
-    }
-    #modal-content {
-        background: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        position: relative;
-        width: 90%;
-        max-width: 500px;
-    }
-    #close-modal {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-    }
-    #clock {
-        font-size: 2em;
-        text-align: center;
-        margin: 20px 0;
-    }
-    #calculator {
-            margin: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        #calculator button {
-            padding: 10px;
-            margin: 5px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #calculator button:hover {
-            background-color: #0056b3;
-        }
-    .search-container {
-        position: relative;
-        margin: 20px;
-    }
-    #animated-search {
-        width: 150px;
-        transition: width 0.4s;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    #animated-search:focus {
-        width: 300px;
-        border-color: #007bff;
-    }
-    .service-card, .testimonial-card, .doctor-profile {
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            text-align: center;
-        }
-    .service-card img, .testimonial-card img, .doctor-profile img {
-        max-width: 100%;
-        height: auto;
-    }
-    .testimonial-card {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-        }
-        .testimonial-card blockquote {
-            font-style: italic;
-            margin: 10px 0;
-        }
-        /* Different paragraph colors */
-        p {
-            color: #333; /* Default color */
-        }
-        .services p {
-            color: #0056b3; /* Blue for services */
-        }
-        .testimonials p {
-            color: #28a745; /* Green for testimonials */
-        }
-        .doctor-profile p {
-            color: #dc3545; /* Red for doctor profiles */
-        }
-        .registration p, .contact-us p {
-            color: #6c757d; /* Grey for registration and contact us */
-        }
-    .todo-list, .services, .testimonials, .doctors, .registration, .contact-us {
-        padding: 20px;
-    }
-    .todo-list input, .todo-list button {
-        padding: 10px;
-        margin: 5px 0;
-    }
-    form label {
-        display: block;
-        margin-top: 10px;
-    }
-    form input, form textarea, form button {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-    }
-    form button {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    form button:hover {
-        background-color: #0056b3;
-    }
-    footer {
-        padding: 20px;
-        background: #f8f9fa;
-        border-top: 1px solid #ddd;
-        text-align: center;
-    }
-    .social-media {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 10px;
-    }
-    .social-icon {
-        text-decoration: none;
-        padding: 10px;
-        border-radius: 50%;
-        background: #ddd;
-        transition: margin-right 2s ease-in-out;
-    }
-    .social-icon:hover {
-        background: #555;
-        color: #fff;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-        nav ul {
-            flex-direction: column;
-            align-items: center;
-        }
-        .search-container {
-            margin: 10px;
-        }
-    }
-     .notification-button {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 1000;
-        }
-        .notification-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -317,23 +96,23 @@
 
     <!-- Services section -->
     <section class="services" id="services">
-    <h3>A. Our Services</h3>
+        <h3>A. Our Services</h3>
         <div class="service-list">
             <div class="service-card">
                 <h3>1. Cardiology</h3>
-                <img src="./images/heart1.jpg" alt="Cardiology Service">
+                <img width="200" height="200" src="./images/heart1.jpg" alt="Cardiology Service">
                 <p>Expert care for heart conditions and diseases.</p>
                 <a href="/services/cardiology">Learn More</a>
             </div>
             <div class="service-card">
                 <h3>2. Women's Health</h3>
-                <img src="./images/women'health1.png" alt="Women's Health Care">
+                <img width="200" height="200" src="./images/women'health1.png" alt="Women's Health Care">
                 <p>Comprehensive health services tailored for women.</p>
                 <a href="/services/womens-health">Learn More</a>
             </div>
             <div class="service-card">
                 <h3>3. Orthopedics</h3>
-                <img src="./images/Orthopedics-a.png" alt="Orthopedics">
+                <img width="200" height="200" src="./images/Orthopedics-a.png" alt="Orthopedics">
                 <p>Specialized care for bones and joints.</p>
                 <a href="/services/orthopedics">Learn More</a>
             </div>
@@ -345,18 +124,18 @@
         <h3>B. What Our Clients Say</h3>
         <div class="testimonial-card">
             <h3>1. John David</h3>
-            <img src="./images/TESTMONY2.jpeg" alt=" John David">
+            <img  width="200" height="200" src="./images/TESTMONY2.jpeg" alt=" John David">
             <blockquote>
                 <p>"The care I received was exceptional. The staff was attentive and professional."John David</p>
-             
+
             </blockquote>
         </div>
         <div class="testimonial-card">
             <h3>2. Ariella Gahimbare</h3>
-            <img src="./images/pexels-gabby-k-6998345.jpg" alt="Ariella Gahimbare">
+            <img  width="200" height="200" src="./images/Ariella Gahimbare.jpg" alt="Ariella Gahimbare">
             <blockquote>
                 <p>"I highly appreciate this facility. The doctors are knowledgeable and caring." Ariella Gahimbare</p>
-            
+
             </blockquote>
         </div>
     </section>
@@ -366,12 +145,12 @@
         <h3>B. Our Doctors</h3>
         <div class="doctor-profile">
             <h3>1. Dr.Jannette Mwenda</h3>
-            <img src="./images/Ariella 18.jpg" alt="Jannette Mwenda">
+            <img  width="200" height="200" src="./images/Ariella 18.jpg" alt="Jannette Mwenda">
             <p>Specialist in Internal Medicine with over 10 years of experience.</p>
         </div>
         <div class="doctor-profile">
             <h3>2. Dr. Alexis Irankunda</h3>
-            <img src="./images/doctor6.jpg" alt="Dr. Alexis Irankunda">
+            <img  width="200" height="200" src="./images/doctor6.jpg" alt="Dr. Alexis Irankunda">
             <p>Expert in Pediatrics, dedicated to providing quality care for children.</p>
         </div>
     </section>
@@ -406,14 +185,14 @@
             <textarea id="contact-message" name="message" rows="4" required></textarea>
             <button type="submit">Send Message</button>
         </form>
-                <!-- Additional Contact Information -->
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><strong>Mobile:</strong> +254748253117</p>
-                    <p><strong>Email:</strong> <a href="mailto:info@compassinatecare.com">info@compassinatecare.com</a></p>
-                    <p><strong>Location:</strong> Thika Road, Nairobi, CC 191238</p>
-                </div>
-        
+        <!-- Additional Contact Information -->
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Mobile:</strong> +254748253117</p>
+            <p><strong>Email:</strong> <a href="mailto:info@compassinatecare.com">info@compassinatecare.com</a></p>
+            <p><strong>Location:</strong> Thika Road, Nairobi, CC 191238</p>
+        </div>
+
     </section>
 
     <footer>
@@ -429,7 +208,7 @@
 
     <script>
         // Dark/Light Mode Toggle
-        document.getElementById('theme-toggle').addEventListener('click', function() {
+        document.getElementById('theme-toggle').addEventListener('click', function () {
             document.body.classList.toggle('dark-mode');
         });
 
@@ -438,15 +217,15 @@
         const openModalButton = document.getElementById('open-modal');
         const closeModalButton = document.getElementById('close-modal');
 
-        openModalButton.addEventListener('click', function() {
+        openModalButton.addEventListener('click', function () {
             modal.style.display = 'flex';
         });
 
-        closeModalButton.addEventListener('click', function() {
+        closeModalButton.addEventListener('click', function () {
             modal.style.display = 'none';
         });
 
-        window.addEventListener('click', function(event) {
+        window.addEventListener('click', function (event) {
             if (event.target === modal) {
                 modal.style.display = 'none';
             }
@@ -463,32 +242,32 @@
         updateClock(); // Initialize clock immediately
 
         // Calculator
-        
+
         let display = document.getElementById('display');
         let currentOperation = '';
-        
+
         function appendNumber(number) {
             display.value += number;
         }
-        
+
         function setOperation(operation) {
             currentOperation += display.value + ' ' + operation + ' ';
             display.value = '';
         }
-        
+
         function calculate() {
             currentOperation += display.value;
             display.value = eval(currentOperation);
             currentOperation = '';
         }
-        
+
         function clearDisplay() {
             display.value = '';
             currentOperation = '';
         }
 
         // To-Do List
-        document.getElementById('add-todo').addEventListener('click', function() {
+        document.getElementById('add-todo').addEventListener('click', function () {
             const input = document.getElementById('todo-input');
             const task = input.value.trim();
             if (task) {
@@ -500,6 +279,5 @@
         });
     </script>
 </body>
+
 </html>
-
-
